@@ -2,6 +2,8 @@
  * Handle modal display
  */
 
+import { getFieldsElements } from "./getFieldsElements.js";
+
 export default class HandleModalClass {
   constructor() {
     this.modal = document.getElementsByClassName("background")[0];
@@ -17,11 +19,15 @@ export default class HandleModalClass {
   };
 
   launchModal = () => {
-    console.log("test");
     this.modal.style.display = "block";
     this.validationMessage.style.display = "none";
     this.closeButton.style.display = "none";
     this.form.style.display = "block";
+    const fieldsValidations = getFieldsElements();
+
+    fieldsValidations.forEach((field) => {
+      field.messageNode[0].setAttribute("data-error-visible", "false");
+    });
   };
 
   closeModal = () => {

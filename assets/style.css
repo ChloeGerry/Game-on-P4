@@ -202,7 +202,7 @@ input {
 }
 .form-data[data-error-visible="true"]::after {
   opacity: 1;
-  margin: 7px 0;
+  margin: 11px 0;
 }
 .form-data[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
@@ -492,6 +492,9 @@ footer {
     top: 88px;
     background-color: transparent;
     overflow: hidden;
+    position: absolute;
+    height: auto;
+    width: auto;
   }
 
   .hero-section {
