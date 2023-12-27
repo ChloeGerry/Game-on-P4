@@ -126,7 +126,10 @@ const validate = () => {
     emailInput.value = "";
     birthdateInput.value = "";
     tournamentsInput.value = "";
-    isLocationInputChecked = false;
+    for (let i = 0; i < locationInput.length; i++) {
+      locationInput[i].checked = false;
+      isLocationInputChecked = false;
+    }
   }
 };
 
