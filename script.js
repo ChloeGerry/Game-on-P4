@@ -31,38 +31,15 @@ const validate = () => {
   });
 
   if (areAllFieldsValids) {
-    console.log(
-      "firstname :",
-      firstNameInput.value,
-      "lastname :",
-      lastNameInput.value,
-      "email :",
-      emailInput.value,
-      "birthdate :",
-      birthdateInput.value,
-      "tournaments :",
-      tournamentsInput.value,
-      "is locationInput checked :",
-      isLocationInputChecked,
-      "are users conditions checked :",
-      usersConditionsInput.checked
-    );
+    fieldsValidations.forEach((field) => {
+      console.log(field.fieldName, field.value);
+    });
 
+    form.reset();
     form.style.display = "none";
 
     const validationMessage = new HandleModalClass();
     validationMessage.lauchValidationMessage();
-
-    firstNameInput.value = "";
-    lastNameInput.value = "";
-    emailInput.value = "";
-    birthdateInput.value = "";
-    tournamentsInput.value = "";
-
-    for (let i = 0; i < locationInput.length; i++) {
-      locationInput[i].checked = false;
-      isLocationInputChecked = false;
-    }
   }
 };
 

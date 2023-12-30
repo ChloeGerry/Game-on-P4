@@ -34,14 +34,20 @@ export const getFieldsElements = () => {
     {
       messageNode: firstNameErrorMessage,
       isInvalid: !firstNameInput.value || firstNameInput.value.length < 2,
+      value: firstNameInput.value,
+      fieldName: "Prénom :",
     },
     {
       messageNode: lastNameErrorMessage,
       isInvalid: !lastNameInput.value || lastNameInput.value.length < 2,
+      value: lastNameInput.value,
+      fieldName: "Nom :",
     },
     {
       messageNode: emailErrorMessage,
       isInvalid: !emailInput.value || !emailRegex.test(emailInput.value),
+      value: emailInput.value,
+      fieldName: "Email :",
     },
     {
       messageNode: birthdateErrorMessage,
@@ -52,18 +58,26 @@ export const getFieldsElements = () => {
         (currentDate.getFullYear() - userBirthdate.getFullYear() === 18 &&
           userBirthdate.getMonth() >= currentDate.getMonth() &&
           userBirthdate.getDate() > currentDate.getDate()),
+      value: birthdateInput.value,
+      fieldName: "Date de naissance :",
     },
     {
       messageNode: tournamentsQuantityErrorMessage,
       isInvalid: !tournamentsInput.value || !tournamentsRegex.test(tournamentsInput.value),
+      value: tournamentsInput.value,
+      fieldName: "Nombres de tournois effectués :",
     },
     {
       messageNode: locationErrorMessage,
       isInvalid: !isLocationInputChecked,
+      value: isLocationInputChecked,
+      fieldName: "Lieu du tournois :",
     },
     {
       messageNode: usersConditionsErrorMessage,
       isInvalid: !usersConditionsInput.checked,
+      value: usersConditionsInput.checked,
+      fieldName: "Est ce que les conditions d'utilisation sont cochées :",
     },
   ];
 
